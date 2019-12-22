@@ -153,7 +153,7 @@ async def set_afk(afk_e):
         await afk_e.edit(f"Going AFK!\
         \nReason: `{string}`")
     else:
-        await afk_e.edit("Going away from Virtual World !!")
+        await afk_e.edit("`Going away from Virtual World !!`")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     if afk_db:
