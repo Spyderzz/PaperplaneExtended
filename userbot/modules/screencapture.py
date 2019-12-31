@@ -16,7 +16,7 @@ from userbot.events import register
 from userbot import GOOGLE_CHROME_BIN, CHROME_DRIVER, CMD_HELP
 
 
-@register(pattern=r".ss (.*)", outgoing=True)
+@register(pattern=r"^.ss (.*)", outgoing=True)
 async def capture(url):
     """ For .ss command, capture a website's screenshot and send the photo. """
     await url.edit("`Processing ...`")
@@ -58,7 +58,7 @@ async def capture(url):
     if url.reply_to_msg_id:
         message_id = url.reply_to_msg_id
     with io.BytesIO(im_png) as out_file:
-        out_file.name = "ScreenShot.png"
+        out_file.name = "screencapture.png"
         await url.edit("`Uploading screenshot as file..`")
         await url.client.send_file(url.chat_id,
                                    out_file,

@@ -29,13 +29,10 @@ for module_name in ALL_MODULES:
 
 LOGS.info("You are running Paperplane Extended [v5.0]")
 
-LOGS.info(
-  "Congratulations, your userbot is now running !!"
-  "Test it by typing .alive in any chat.")
+LOGS.info("Congratulations, your userbot is now running !!"
+          "Test it by typing .alive in any chat.")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.loop.run_until_complete(bot.disconnected)
-    args = [sys.executable, "-m", "userbot"]
-    os.execle(sys.executable, *args, os.environ)
+    bot.run_until_disconnected()
