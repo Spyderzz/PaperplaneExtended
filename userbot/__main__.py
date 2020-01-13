@@ -7,7 +7,6 @@
 
 from importlib import import_module
 from sys import argv
-from os import execle
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import LOGS, bot
@@ -27,10 +26,11 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("You are running Paperplane Extended [v5.0]")
+LOGS.info("You are running UserBug [v1.0]")
 
-LOGS.info("Congratulations, your userbot is now running !!"
-          "Test it by typing .alive in any chat.")
+LOGS.info(
+    "Congrats, your userbug is now running!! Type .alive for sure."
+    "If you need something, ask on https://t.me/UserBotIndo")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
